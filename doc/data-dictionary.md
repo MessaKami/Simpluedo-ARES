@@ -6,7 +6,7 @@ Ici les types données sont déjà véritablement précisés parce que nous savo
 |--------------------------|------------------------------------------------|------------------|
 | user_UUID                | Identifiant unique de l'utilisateur            | UUID             |
 | user_pseudo              | Pseudo de l'utilisateur                        | VARCHAR(15)      |
-| role_id                  | Identifiant unique du rôle                     | INTEGER          |
+| role_id                  | Identifiant unique du rôle                     | SERIAL           |
 | role_name                | Rôle attribué à un utilisateur pour la partie  | VARCHAR(15)      |
 | character_id             | Identifiant du personnage                      | SERIAL           |
 | character_name           | Nom du personnage                              | VARCHAR(20)      |
