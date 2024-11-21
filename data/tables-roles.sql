@@ -67,3 +67,11 @@ CREATE TABLE objects
  character_id INTEGER REFERENCES characters(character_id),
  room_id INTEGER REFERENCES rooms(room_id)
  );
+
+-- Création de l'admin de la base de données après s'être connecté en tant que super admin
+CREATE ROLE admin_simpluedo LOGIN PASSWORD 'danslesalonaveclacorde';
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO admin_simpluedo;
+GRANT USAGE, SELECT ON SEQUENCE roles_role_id_seq, characters_character_id_seq, rooms_room_id_seq, objects_object_id_seq TO admin_simpluedo;
+
+
+-- A présent on se déconnecte du super admin pour switcher sur l'admin
