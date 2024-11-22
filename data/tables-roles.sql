@@ -109,23 +109,13 @@ INSERT INTO roles (role_name) VALUES
  e, il est parti en voyage dans des pays exotiques avec sa femme, Mlle Annette. Cependant, celui ci se délaissa rapide
  ment de la compagnie de sa bien-aimée au profit d''une toute nouvelle venue : la jeune et charmante Mlle Rose.');
 
-INSERT INTO objects (
-     object_name,
-     object_image,
-     object_description
-     ) VALUES 
-     ('Poignard', 'https://static.wikia.nocookie.net/cluedo/images/8/8a/2016W2.jpg/revision/latest?cb=20200927104245',
-  'C''est un couteau.'),
-     ('Revolver', 'https://static.wikia.nocookie.net/cluedo/images/c/cb/2016W1.jpg/revision/latest?cb=20200927104244',
-  'C''est un flingue.'),
-     ('Chandelier', 'https://static.wikia.nocookie.net/cluedo/images/d/d9/2016W5.jpg/revision/latest?cb=20200927104246
- ', 'C''est un chandelier.'),
-     ('Corde', 'https://static.wikia.nocookie.net/cluedo/images/c/c5/2016W4.jpg/revision/latest?cb=20200927104246', 'C
- ''est une corde.'),
-     ('Clé anglaise', 'https://static.wikia.nocookie.net/cluedo/images/7/72/2016W6.jpg/revision/latest?cb=202009271042
- 47', 'C''est une clé anglaise.'),
-     ('Tuyau de fer', 'https://static.wikia.nocookie.net/cluedo/images/1/17/2016W3.jpg/revision/latest?cb=202009271042
- 45', 'C''est un tuyau de fer.');
+INSERT INTO objects (object_name, object_image, object_description, room_id) VALUES 
+('Poignard', 'https://static.wikia.nocookie.net/cluedo/images/8/8a/2016W2.jpg/revision/latest?cb=20200927104245', 'C''est un couteau.', 1),
+('Revolver', 'https://static.wikia.nocookie.net/cluedo/images/c/cb/2016W1.jpg/revision/latest?cb=20200927104244', 'C''est un flingue.', 1),
+('Chandelier', 'https://static.wikia.nocookie.net/cluedo/images/d/d9/2016W5.jpg/revision/latest?cb=20200927104246', 'C''est un chandelier.', 4),
+('Corde', 'https://static.wikia.nocookie.net/cluedo/images/c/c5/2016W4.jpg/revision/latest?cb=20200927104246', 'C''est une corde.', 5), 
+('Clé anglaise', 'https://static.wikia.nocookie.net/cluedo/images/7/72/2016W6.jpg/revision/latest?cb=20200927104247', 'C''est une clé anglaise.', 7),
+('Tuyau de fer', 'https://static.wikia.nocookie.net/cluedo/images/1/17/2016W3.jpg/revision/latest?cb=20200927104245', 'C''est un tuyau de fer.', 9);
 
 INSERT INTO rooms (room_name, room_image, room_description) VALUES
  ('La cuisine','https://fr.shopping.rakuten.com/photo/936907516.jpg?frz-width=532&frz-fit=contain','C''est une cuisine
