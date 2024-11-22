@@ -39,15 +39,7 @@ INSERT INTO roles (role_name) VALUES
  e, il est parti en voyage dans des pays exotiques avec sa femme, Mlle Annette. Cependant, celui ci se délaissa rapide
  ment de la compagnie de sa bien-aimée au profit d''une toute nouvelle venue : la jeune et charmante Mlle Rose.');
 
-INSERT INTO objects (object_name, object_image, object_description, room_id) VALUES 
-('Poignard', 'https://static.wikia.nocookie.net/cluedo/images/8/8a/2016W2.jpg/revision/latest?cb=20200927104245', 'C''est un couteau.', 1),
-('Revolver', 'https://static.wikia.nocookie.net/cluedo/images/c/cb/2016W1.jpg/revision/latest?cb=20200927104244', 'C''est un flingue.', 1),
-('Chandelier', 'https://static.wikia.nocookie.net/cluedo/images/d/d9/2016W5.jpg/revision/latest?cb=20200927104246', 'C''est un chandelier.', 4),
-('Corde', 'https://static.wikia.nocookie.net/cluedo/images/c/c5/2016W4.jpg/revision/latest?cb=20200927104246', 'C''est une corde.', 5), 
-('Clé anglaise', 'https://static.wikia.nocookie.net/cluedo/images/7/72/2016W6.jpg/revision/latest?cb=20200927104247', 'C''est une clé anglaise.', 7),
-('Tuyau de fer', 'https://static.wikia.nocookie.net/cluedo/images/1/17/2016W3.jpg/revision/latest?cb=20200927104245', 'C''est un tuyau de fer.', 9);
-
-INSERT INTO rooms (room_name, room_image, room_description) VALUES
+ INSERT INTO rooms (room_name, room_image, room_description) VALUES
  ('La cuisine','https://fr.shopping.rakuten.com/photo/936907516.jpg?frz-width=532&frz-fit=contain','C''est une cuisine
  '),
  ('La salle de bal','https://fr.shopping.rakuten.com/photo/936907516.jpg?frz-width=532&frz-fit=contain','C''est une sa
@@ -65,6 +57,14 @@ INSERT INTO rooms (room_name, room_image, room_description) VALUES
  ('La salle à manger', 'https://fr.shopping.rakuten.com/photo/936907516.jpg?frz-width=532&frz-fit=contain','C''est une
   salle à manger');
 
+INSERT INTO objects (object_name, object_image, object_description, room_id) VALUES 
+('Poignard', 'https://static.wikia.nocookie.net/cluedo/images/8/8a/2016W2.jpg/revision/latest?cb=20200927104245', 'C''est un couteau.', 1),
+('Revolver', 'https://static.wikia.nocookie.net/cluedo/images/c/cb/2016W1.jpg/revision/latest?cb=20200927104244', 'C''est un flingue.', 1),
+('Chandelier', 'https://static.wikia.nocookie.net/cluedo/images/d/d9/2016W5.jpg/revision/latest?cb=20200927104246', 'C''est un chandelier.', 4),
+('Corde', 'https://static.wikia.nocookie.net/cluedo/images/c/c5/2016W4.jpg/revision/latest?cb=20200927104246', 'C''est une corde.', 5), 
+('Clé anglaise', 'https://static.wikia.nocookie.net/cluedo/images/7/72/2016W6.jpg/revision/latest?cb=20200927104247', 'C''est une clé anglaise.', 7),
+('Tuyau de fer', 'https://static.wikia.nocookie.net/cluedo/images/1/17/2016W3.jpg/revision/latest?cb=20200927104245', 'C''est un tuyau de fer.', 9);
+
 INSERT INTO users (user_pseudo,character_id,role_id) VALUES
  ('BetaPickle',5,2),
  ('MiloSasuke',1,2),
@@ -74,7 +74,7 @@ INSERT INTO users (user_pseudo,character_id,role_id) VALUES
  ('ZeCyber',2,2),
  ('ShadowCrazy',NULL,3);
 
- INSERT INTO characters_rooms (character_id, room_id, arrival_hour, departure_hour) VALUES
+INSERT INTO characters_rooms (character_id, room_id, arrival_hour, departure_hour) VALUES
 (1, 4, '08:00:00', '08:00:00'),
 (2, 9, '08:00:00', '08:22:00'),
 (3, 4, '08:00:00', '08:14:00'),
@@ -93,3 +93,11 @@ INSERT INTO users (user_pseudo,character_id,role_id) VALUES
 (4, 1, '08:23:00', '08:52:00'),
 (5, 2, '09:31:00', '10:25:00'),
 (6, 5, '08:49:00', '10:03:00');
+
+INSERT INTO character_current_position (character_id, room_id, arrival_hour) VALUES
+(1, 4, '08:00:00'),
+(2, 9, '08:00:00'),
+(3, 4, '08:00:00'),
+(4, 5, '08:00:00'),
+(5, 3, '08:00:00'),
+(6, 6, '08:00:00');

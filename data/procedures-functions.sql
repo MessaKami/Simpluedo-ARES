@@ -26,3 +26,28 @@ CREATE OR REPLACE FUNCTION retrieve_room_objects(roomName VARCHAR)
  -- Appel pour tester la procèdure
 
  CALL add_room_object('La banane', 'C''est une banane', 'http://image.com', 2);
+
+ -- Création d'une fonction permettant de mettre à jour la position actuelles des personnages
+
+ CREATE OR REPLACE FUNCTION check_character_position()
+ RETURNS TRIGGER
+ LANGUAGE PLPGSQL
+ AS
+ $$
+ BEGIN
+     UPDATE character_current_position
+     SET room_id = NEW.room_id,
+         arrival_hour = NEW.arrival_hour
+     WHERE character_id = NEW.character_id;
+ 
+     RETURN NEW;
+ END;
+ $$;
+
+ -- Création du trigger appelant la fonction de mise à jour de la position des personnages 
+
+ CREATE TRIGGER check_character_position
+ AFTER INSERT
+ ON characters_rooms
+ FOR EACH ROW
+ EXECUTE PROCEDURE check_character_position();

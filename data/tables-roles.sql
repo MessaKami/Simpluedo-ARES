@@ -67,3 +67,11 @@ CREATE TABLE objects
  character_id INTEGER REFERENCES characters(character_id),
  room_id INTEGER REFERENCES rooms(room_id)
  );
+
+-- table de la position actuelle des personnages
+CREATE TABLE character_current_position
+ (
+ character_id INTEGER,
+ room_id INTEGER,
+ arrival_hour TIME
+ );
