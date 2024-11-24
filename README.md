@@ -1,4 +1,26 @@
 # Simpluedo-ARES
+## Docker
+Pour lancer le container docker, tout d'abord, créer l'image:
+```
+docker build . -t simpluedo-image:latest  
+```
+
+ensuite créer le container associé:
+```
+docker run --name simpluedo-container -d simpluedo-image:latest    
+```
+
+Pour rentrer dans le container:
+```
+docker exec -it simpluedo-container bash
+```
+
+Une fois dans le container, se connecter avec la commande suivante:
+```
+psql -U admin_simpluedo -d simpluedo
+```
+
+Vous êtes à présent connecté à la base de données.
 
 ## Requête à réaliser sur la BDD
 
@@ -11,7 +33,7 @@ SELECT character_name FROM characters;
 
 ```sql
 SELECT user_pseudo, character_name FROM users
-INNER JOIN characters ON characters.character_id = users.character_id
+INNER JOIN characters ON characters.character_id = users.character_id;
 ```
 
 - Afficher la liste des personnages présents dans la cuisine entre 08:00 et 09:00
@@ -44,7 +66,7 @@ GROUP BY rooms.room_name;
 
 ```sql
 INSERT INTO rooms (room_name, room_image, room_description) VALUES
-('Le garage', 'https://fr.shopping.rakuten.com/photo/936907516.jpg?frz-width=532&frz-fit=contain','C''est un garage')
+('Le garage', 'https://fr.shopping.rakuten.com/photo/936907516.jpg?frz-width=532&frz-fit=contain','C''est un garage');
 ```
 
 - Modifier un objet 
@@ -61,4 +83,3 @@ WHERE object_name = 'Revolver';
 DELETE FROM rooms
 WHERE room_name = 'Le garage';
 ```
-

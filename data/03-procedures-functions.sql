@@ -12,7 +12,7 @@ CREATE OR REPLACE FUNCTION retrieve_room_objects(roomName VARCHAR)
 
  -- Appel pour tester la fonction 
 
- SELECT * FROM retrieve_room_objects('La cuisine');
+--  SELECT * FROM retrieve_room_objects('La cuisine');
 
  -- Création d'une procédure permettant d'ajouter un nouvel objet avec son nom, sa description, son image et sa pièce d'affiliation placés en paramètres
 
@@ -25,7 +25,7 @@ CREATE OR REPLACE FUNCTION retrieve_room_objects(roomName VARCHAR)
 
  -- Appel pour tester la procèdure
 
- CALL add_room_object('La banane', 'C''est une banane', 'http://image.com', 2);
+--  CALL add_room_object('La banane', 'C''est une banane', 'http://image.com', 2);
 
  -- Création d'une fonction permettant de mettre à jour la position actuelles des personnages
 
@@ -51,3 +51,13 @@ CREATE OR REPLACE FUNCTION retrieve_room_objects(roomName VARCHAR)
  ON characters_rooms
  FOR EACH ROW
  EXECUTE PROCEDURE check_character_position();
+
+ -- Exemple pour tester
+
+--  Rajouter une nouvelle entrée dans characters_rooms:
+
+--  INSERT INTO characters_rooms (character_id, room_id, arrival_hour) VALUES
+--  (1, 9, '10:30:00');
+
+--  Pour vérifier que la mise à jour à été prise en compte:
+-- SELECT * FROM character_current_position;

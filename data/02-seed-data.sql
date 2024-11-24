@@ -4,7 +4,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO admin_sim
 GRANT USAGE, SELECT ON SEQUENCE roles_role_id_seq, characters_character_id_seq, rooms_room_id_seq, objects_object_id_seq TO admin_simpluedo;
 
 
--- A présent on se déconnecte du super admin pour switcher sur l'admin
+-- A présent on se déconnecte du super admin colonel_moutarde pour switcher sur l'admin admin_simpluedo
 
 -- Puis rajouter les données dans les tables
 INSERT INTO roles (role_name) VALUES
