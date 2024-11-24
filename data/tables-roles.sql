@@ -5,7 +5,7 @@ CREATE ROLE colonel_moutarde WITH CREATEDB CREATEROLE LOGIN PASSWORD 'danslacuis
 CREATE DATABASE simpluedo OWNER colonel_moutarde;
 
 -- ensuite se déconnecter de psql et du super admin pour se connecter à pgcli
-pgcli -h localhost -U colonel_moutarde -d simpluedo
+-- pgcli -h localhost -U colonel_moutarde -d simpluedo
 
 -- entrer le mot de passe de colonel_moutarde
 
